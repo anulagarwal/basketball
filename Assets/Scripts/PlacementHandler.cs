@@ -4,18 +4,20 @@ using UnityEngine;
 
 public class PlacementHandler : MonoBehaviour
 {
-    [SerializeField] public bool isPlacing;
-    [SerializeField] public bool isSelectedCharacter;
-    public LayerMask lm;
+    #region Properties
+    [SerializeField] private bool isPlacing = false;
+    [SerializeField] private bool isSelectedCharacter = false;
+    [SerializeField] private LayerMask lm = 0;
 
-    private Transform selectedCharacter;
-    // Start is called before the first frame update
+    private Transform selectedCharacter = null;
+    #endregion
+
+    #region MonoBehaviour Functions
     void Start()
     {
 
     }
 
-    // Update is called once per frame
     void Update()
     {
         if (Input.GetMouseButtonUp(0))
@@ -54,7 +56,9 @@ public class PlacementHandler : MonoBehaviour
             }
         }
     }
+    #endregion
 
+    #region Public Core Functions
     public void StartPlacement()
     {
         isPlacing = true;
@@ -70,6 +74,5 @@ public class PlacementHandler : MonoBehaviour
         selectedCharacter = character;
         isSelectedCharacter = true;
     }
-
-
+    #endregion
 }

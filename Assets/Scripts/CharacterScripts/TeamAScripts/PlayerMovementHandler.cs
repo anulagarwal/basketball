@@ -11,6 +11,7 @@ public class PlayerMovementHandler : MonoBehaviour
     [Header("Component Reference")]
     [SerializeField] private Animator characterAnimator = null;
     [SerializeField] private CharacterController characterController = null;
+    [SerializeField] private Transform ballHolder = null;
 
     [Header("Gravity Setup")]
     [SerializeField] private float groundDistance = 0f;
@@ -38,6 +39,11 @@ public class PlayerMovementHandler : MonoBehaviour
         }
 
         GravityMechanism();
+    }
+
+    private void OnMouseDown()
+    {
+        TeamAHandler.Instance.PassBall(ballHolder);
     }
     #endregion
 
