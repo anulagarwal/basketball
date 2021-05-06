@@ -24,19 +24,26 @@ public class PlacementHandler : MonoBehaviour
         {
             if (isSelectedCharacter)
             {
-                RaycastHit hit;
-                Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
-
-                if (Physics.Raycast(ray, out hit))
-                {
-                    print(hit.collider.gameObject.name);
-                    selectedCharacter.position = new Vector3(hit.point.x, hit.point.y, hit.point.z);
+               
                     isSelectedCharacter = false;
-                }
+                
             }
 
         }
+        if (Input.GetMouseButton(0))
+        {
 
+            if (isSelectedCharacter)
+            {
+                RaycastHit hit;
+                Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+
+                if (Physics.Raycast(ray, out hit, lm))
+                {                   
+                    selectedCharacter.position = new Vector3(hit.point.x, hit.point.y, hit.point.z);                   
+                }
+            }
+        }
         if (Input.GetMouseButtonDown(0))
         {
             if (isPlacing)
