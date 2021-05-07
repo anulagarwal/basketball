@@ -5,3 +5,10 @@ public enum PlayerCharacterAnimationState
     Throw,
     Victory
 };
+
+public enum AICharacterAnimationState
+{
+    Idle,
+    Run,
+    Victory
+};

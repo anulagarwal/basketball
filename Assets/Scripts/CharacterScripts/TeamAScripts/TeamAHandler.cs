@@ -10,6 +10,9 @@ public class TeamAHandler : MonoBehaviour
     [Header("Team Settings")]
     [SerializeField] private RugbyBallHandler rugbyBallHandler = null;
     [SerializeField] private List<RugbyBallKeeper> rugbyBallKeepers = new List<RugbyBallKeeper>();
+
+    [Header("Temp Variables")]
+    [SerializeField] private Transform ballKeeperTemp = null;
     #endregion
 
     #region MonoBehaviour Functions
@@ -21,11 +24,23 @@ public class TeamAHandler : MonoBehaviour
         }
         Instance = this;
     }
+
+    private void Start()
+    {
+        //Testing
+        RugbyBallKeeper = ballKeeperTemp;
+    }
+    #endregion
+
+    #region Getter And Setter
+    public Transform RugbyBallKeeper { get; set; }
     #endregion
 
     #region Public Core Functions
-    public void PassBall(Transform targetPositionTransform)
+    public void PassBall(Transform targetPositionTransform, Transform playerTransform)
     {
+        RugbyBallKeeper = playerTransform;
+
         rugbyBallHandler.transform.parent = null;
         rugbyBallHandler.BallNewPositionTransform = targetPositionTransform;
         rugbyBallHandler.PassBall = true;

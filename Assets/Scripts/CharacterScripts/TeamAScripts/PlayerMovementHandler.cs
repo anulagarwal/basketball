@@ -43,7 +43,7 @@ public class PlayerMovementHandler : MonoBehaviour
 
     private void OnMouseDown()
     {
-        TeamAHandler.Instance.PassBall(ballHolder);
+        TeamAHandler.Instance.PassBall(ballHolder, this.transform);
     }
     #endregion
 

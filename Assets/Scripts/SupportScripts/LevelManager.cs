@@ -32,6 +32,8 @@ public class LevelManager : MonoBehaviour
 
     #region Getter And Setter
     public PlacementHandler GetPlacementHandler { get => placementHandler; }
+
+    public List<PlayerMovementHandler> GetTeamAPlayerMovementHandlers { get => teamAPlayerMovementHandlers; }
     #endregion
 
     #region Public Core Functions
