@@ -2056,6 +2056,8 @@ GameObject:
   - component: {fileID: 587195363978623139}
   - component: {fileID: 247121552230048282}
   - component: {fileID: 247121552230048283}
+  - component: {fileID: 247121552230048288}
+  - component: {fileID: 247121552230048287}
   - component: {fileID: 247121552230048284}
   - component: {fileID: 247121552230048286}
   - component: {fileID: 247121552230048285}
@@ -2137,7 +2139,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3462c57d3c72c984b93a4efd4361071a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  impactForce: 80
+  impactForce: 180
   ragdollObj: {fileID: 47739640830099778}
   characterAnimator: {fileID: 247121552230048282}
   rbSpine: {fileID: 4718011962697982358}
@@ -2154,6 +2156,37 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ragdollHandler: {fileID: 247121552230048285}
+  aiMovementHandler: {fileID: 247121552230048284}
+--- !u!136 &247121552230048287
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 247121552230048281}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  m_Radius: 1
+  m_Height: 6
+  m_Direction: 1
+  m_Center: {x: 0, y: 3, z: 0}
+--- !u!54 &247121552230048288
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 247121552230048281}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 1
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!4 &409662035502968625 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 2469344931995238791, guid: 62691ffb42595b64d90be46b09c57150, type: 3}

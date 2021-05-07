@@ -49,6 +49,10 @@ public class AIMovementHandler : MonoBehaviour
     }
     #endregion
 
+    #region  Getter And Setter
+    public Transform GetTargetTransform { get => targetTransform; }
+    #endregion
+
     #region Private Core Functions
     private void AITargetFinder()
     {
